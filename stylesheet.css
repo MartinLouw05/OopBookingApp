@@ -1,0 +1,106 @@
+
+html {
+    background-image: url("./images/vacation.webp");
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: cover;
+}
+/*
+form {
+    position: absolute;
+    width: 40%;
+    margin-top: 20px;
+    margin-left: 5%;
+    margin-left: 5%;
+    padding-top: 1px;
+    padding-left: 20px;
+    padding-bottom: 20px;
+    background-color: rgba(255, 255, 255, 0.7);
+    border-radius: 10px;
+    text-align: center;
+}
+*/
+
+section {
+    display: grid;
+    grid-template-areas: "gridArea gridArea";
+    grid-template-columns: repeat(2, 1fr);
+    gap: 5%;
+    grid-auto-rows: auto;
+    grid-template-rows: min-content;
+    margin: 2%;
+}
+
+.gridArea {
+    padding-top: 1px;
+    padding-left: 20px;
+    padding-bottom: 20px;
+    background-color: rgba(255, 255, 255, 0.7);
+    border-radius: 10px;
+    text-align: center;
+}
+
+h1 {
+    text-transform: uppercase;
+    font-size: xx-large;
+}
+
+label {    
+    font-size: larger;
+    font-weight: bold;
+}
+
+.lblFirstName {
+    margin-left: -375px;
+}
+
+.lblLastName {
+    margin-left: -397.5px;
+}
+
+.lblEmailAddress {
+    margin-left: -352.5px;
+}
+
+.lblCheckInDate {
+    margin-left: -355px;
+}
+
+.lblCheckOutDate {
+    margin-left: -345px;
+}
+
+.lblHotelName {
+    margin-left: -425px;
+}
+
+input, select {
+    background-color: rgba(255, 255, 255, 0.2);
+    width: 500px;
+    height: 70px;
+    padding-left: 15px;
+    padding-right: 15px;
+    border-radius: 10px;
+    border-width: 3px;
+    margin-bottom: 5px;
+    font-size: larger;
+}
+
+.btnSubmit {
+    margin-top: 10px;
+    cursor: pointer;
+    background-color: aqua;
+}
+
+.frmInfo {
+    width: 40%;
+    height: 40%;
+    position: absolute;
+    margin-left: 52.5%;
+    margin-right: 5%;
+}
+
+.frmCompare {
+    width: 87.5%;
+    height: fit-content;    
+}
