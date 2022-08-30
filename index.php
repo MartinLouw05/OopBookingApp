@@ -7,6 +7,8 @@
 
         <?php session_start(); ?>
         <?php require('functions.php'); ?>
+        <?php require('hotels.php'); ?>
+        <?php //hotelsInformation(); ?>
         <link rel="stylesheet" type="text/css" href="stylesheet.css?ts=<?=time()?>">
         <script src="./functions.js" defer></script>
     </head>
@@ -24,8 +26,8 @@
                         <label for='firstName' class="lblFirstName">First Name:</label><br>
                             <input type='text' id="firstName" name='firstName' placeholder="Please Enter Your First Name" required><br>
 
-                        <label for='lastName' class="lblLastName">Surname:</label><br>
-                            <input type='text' id="lastName" name='lastName' placeholder="Please Enter Your Surname" required><br>
+                        <label for='surname' class="lblSurname">Surname:</label><br>
+                            <input type='text' id="surname" name='surname' placeholder="Please Enter Your Surname" required><br>
                             
                         <label for='emailAddress' class="lblEmailAddress">Email Address:</label><br>
                             <input type='email' id="emailAddress" name='emailAddress' placeholder="Please Enter Your Email Address" required><br>
@@ -35,6 +37,9 @@
                         <label for='hotelName' class="lblHotelName">Hotel:</label><br>
                             <select id="hotelName" name='hotelName' required>
                                 <option value="" selected>Please Select a Hotel</option>
+                                <?php foreach ($hotels as $key => $option) { ?>
+                                    <option value="<?= $key; ?>"><?= $option -> name; ?></option>    
+                                <?php } ?>                             
                             </select><br>
 
                         <label for='checkInDate' class="lblCheckInDate">Check-in Date:</label><br>
@@ -45,16 +50,22 @@
                     </div>                 
                 </section>
                 <div class="divBtn">
-                    <input type="submit" name="submit" class="btnSubmit">
+                    <input id="submit" type="submit" name="submit" class="btnSubmit">
                 </div>
             </form>
 
-            <section class="compareSection">
+        <?php if($_POST) { ?>
+            <section id="compareSection" class="compareSection">
                 <h1>Hotel Information</h1>
-                <div class="hotelInfo">
-
+                <div id="hotelInfo" class="hotelInfo">
+                    <h4 id="hotelNameInfo">You are booking the <?= $hotelName; ?> hotel</h4>
+                    <p id="noOfDays">No of Days: <?= $noOfDays; ?></p>
+                    <p id="hotelDailyRate"></p>
+                    <p id="total"></p>
+                    <button id="compare">COMPARE</button>
                 </div>
             </section>
+        <?php } ?>
 
 <!--               
     <form>           
