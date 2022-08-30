@@ -5,44 +5,40 @@ html {
     background-position: center;
     background-size: cover;
 }
-/*
-form {
-    position: absolute;
-    width: 40%;
-    margin-top: 20px;
-    margin-left: 5%;
-    margin-left: 5%;
-    padding-top: 1px;
-    padding-left: 20px;
-    padding-bottom: 20px;
-    background-color: rgba(255, 255, 255, 0.7);
-    border-radius: 10px;
-    text-align: center;
-}
-*/
 
-section {
+.frmInput {
+    border-radius: 10px;
+    background-color: rgba(255, 255, 255, 0.7);
+    padding-bottom: 10px;
+    width: 80%;
+    margin-left: 10%;
+    border: solid;
+    border-width: 2px;
+    border-color: yellowgreen;
+}
+
+.inputSection {
     display: grid;
     grid-template-areas: "gridArea gridArea";
     grid-template-columns: repeat(2, 1fr);
-    gap: 5%;
+    gap: 0%;
     grid-auto-rows: auto;
     grid-template-rows: min-content;
-    margin: 2%;
 }
 
 .gridArea {
-    padding-top: 1px;
+    padding-top: 20px;
     padding-left: 20px;
     padding-bottom: 20px;
-    background-color: rgba(255, 255, 255, 0.7);
-    border-radius: 10px;
     text-align: center;
 }
 
 h1 {
     text-transform: uppercase;
     font-size: xx-large;
+    font-family: cursive;
+    text-align: center;
+    margin-bottom: 0px;
 }
 
 label {    
@@ -74,22 +70,83 @@ label {
     margin-left: -425px;
 }
 
-input, select {
+input {
     background-color: rgba(255, 255, 255, 0.2);
     width: 500px;
     height: 70px;
     padding-left: 15px;
     padding-right: 15px;
     border-radius: 10px;
-    border-width: 3px;
+    border-width: 2px;
+    border-color: black;
     margin-bottom: 5px;
     font-size: larger;
+}
+
+select {
+    background-color: rgba(255, 255, 255, 0.2);
+    width: 535px;
+    height: 77.5px;
+    padding-left: 15px;
+    padding-right: 15px;
+    border-radius: 10px;
+    border-width: 2px;
+    border-color: black;
+    margin-bottom: 5px;
+    font-size: larger;
+}
+
+.dateIn {
+    height: 72.5px;
+}
+
+.dateOut {
+    height: 73px;
+}
+
+.divBtn {
+    text-align: center;
 }
 
 .btnSubmit {
     margin-top: 10px;
     cursor: pointer;
     background-color: aqua;
+}
+
+.compareSection {
+    margin-top: 20px;
+    border-radius: 10px;
+    background-color: rgba(255, 255, 255, 0.7);
+    padding-bottom: 10px;
+    width: 80%;
+    margin-left: 10%;
+    border: solid;
+    border-width: 2px;
+    border-color: yellowgreen;
+}
+
+.compareSectionGrid {
+    display: grid;
+    grid-template-areas: "gridArea gridArea";
+    grid-template-columns: repeat(2, 1fr);
+    gap: 0%;
+    grid-auto-rows: auto;
+    grid-template-rows: min-content;
+}
+
+footer {
+    width: 90%;
+    margin-left: 5%;
+    margin-top: 20px;
+    padding: 5px;
+    background-color: aqua;
+    text-align: center;
+    font-style: italic;
+    border-radius: 20px;
+    border: solid;
+    border-width: 1px;
+    border-color: yellowgreen;
 }
 
 .frmInfo {
@@ -101,6 +158,16 @@ input, select {
 }
 
 .frmCompare {
+    position: absolute;
+    margin-top: 20px;
+    margin-left: 5%;
+    margin-left: 5%;
+    padding-top: 1px;
+    padding-left: 20px;
+    padding-bottom: 20px;
+    background-color: rgba(255, 255, 255, 0.7);
+    border-radius: 10px;
+    text-align: center;
     width: 87.5%;
     height: fit-content;    
 }
