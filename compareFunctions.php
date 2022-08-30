@@ -1,10 +1,10 @@
 <?php
     session_start();
-    
+
     $hotels = file_get_contents('hotels.json');
     $hotels = json_decode($hotels);  
 
-    if (isset($_POST['submit'])) {
+    if (isset($_POST['submit'])) { 
         $firstName = $_POST['firstName'];
         $surname = $_POST['surname'];
         $emailAddress = $_POST['emailAddress'];
@@ -45,15 +45,5 @@
         $total = $dailyRate * $_SESSION['noOfDays'];
         
         $_SESSION['total'] = $total;
-    }
-
-    if (array_key_exists('btnCompare', $_POST)) {
-        $firstHotel = $hotelName;
-
-
-        //Add existing hotel data to json file
-
-        
-        header("Location: comparePage.php");
     }
 ?>
