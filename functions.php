@@ -21,6 +21,10 @@
         $_SESSION['checkInDate'] = $checkInDate;
         $_SESSION['checkOutDate'] = $checkOutDate;
         $noOfDays = $_SESSION['noOfDays'];
+
+        calculateTotal();
+
+        $total = $_SESSION['total'];
     }
 
     function calculateNoOfDays($checkInDate, $checkOutDate) {
@@ -32,4 +36,20 @@
         $_SESSION['noOfDays'] = $noOfDays;
     }
 
+    function calculateTotal() {
+        $hotels = file_get_contents('hotels.json');
+        $hotels = json_decode($hotels);  
+
+        $hotelId = $_SESSION['hotelName'];
+        $dailyRate = $hotels[$hotelId] -> dailyRate;
+        $total = $dailyRate * $_SESSION['noOfDays'];
+        
+        $_SESSION['total'] = $total;
+    }
+
+    if (array_key_exists('btnCompare', $_GET)) {
+        $firstHotel = $hotelName;
+        echo "hello world";
+        echo $firstHotel;
+    }
 ?>

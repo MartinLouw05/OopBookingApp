@@ -1,5 +1,6 @@
 
 html {
+    background-color: black;
     background-image: url("./images/vacation.webp");
     background-repeat: no-repeat;
     background-position: center;
@@ -115,6 +116,7 @@ select {
 }
 
 .compareSection {
+    display: block;
     margin-top: 20px;
     border-radius: 10px;
     background-color: rgba(255, 255, 255, 0.7);
@@ -124,6 +126,54 @@ select {
     border: solid;
     border-width: 2px;
     border-color: yellowgreen;
+    text-align: center;
+}
+
+.compareTwoSection {
+    display: none;
+    margin-top: 20px;
+    border-radius: 10px;
+    background-color: rgba(255, 255, 255, 0.7);
+    padding-bottom: 10px;
+    width: 80%;
+    margin-left: 10%;
+    border: solid;
+    border-width: 2px;
+    border-color: yellowgreen;
+    text-align: center;
+}
+
+.hotelInfo {
+    display: block;
+    margin-left: 33.3%;
+    width: 33.3%;
+    text-align: left;
+}
+
+.hotelsInfo {
+    display: block;
+    margin-left: 24%;
+    width: 66.6%;
+    text-align: left;
+
+    display: grid;
+    grid-template-areas: "hotelGrid hotelGrid";
+    grid-template-columns: repeat(2, 1fr);
+    gap: 0%;
+    grid-auto-rows: auto;
+    grid-template-rows: min-content;
+}
+
+.btnCompare, .btnBook {
+    height: 50px;
+    width: 200px;
+    border: solid;
+    border-color: black;
+    border-radius: 10px;
+    border-width: 2px;
+    background-color: aquamarine;
+    font-size: large;
+    cursor: pointer;
 }
 
 .compareSectionGrid {
