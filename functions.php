@@ -3,8 +3,11 @@
     
     $hotels = file_get_contents('hotels.json');
     $hotels = json_decode($hotels);  
+    $date = date('Y-m-d');
+    $passed = false;
 
     if (isset($_POST['submit'])) {
+
         $firstName = $_POST['firstName'];
         $surname = $_POST['surname'];
         $emailAddress = $_POST['emailAddress'];
@@ -12,19 +15,29 @@
         $checkInDate = $_POST['checkInDate'];
         $checkOutDate = $_POST['checkOutDate'];
 
-        calculateNoOfDays($checkInDate, $checkOutDate);
+        if ($checkInDate < $date) {
+            echo "<script>alert('Check-in Date has Already Passed.  Please Try Again');</script>";
+        } 
+        elseif ($checkInDate > $checkOutDate) {
+            echo "<script>alert('Check-out Date is Before Check-in Date.  Please Try Again');</script>";
+        }
+        else {
+            $passed = true;
 
-        $_SESSION['firstName'] = $firstName;
-        $_SESSION['surname'] = $surname;
-        $_SESSION['emailAddress'] = $emailAddress;
-        $_SESSION['hotelName'] = $hotelName;
-        $_SESSION['checkInDate'] = $checkInDate;
-        $_SESSION['checkOutDate'] = $checkOutDate;
-        $noOfDays = $_SESSION['noOfDays'];
+            calculateNoOfDays($checkInDate, $checkOutDate);
 
-        calculateTotal();
-
-        $total = $_SESSION['total'];
+            $_SESSION['firstName'] = $firstName;
+            $_SESSION['surname'] = $surname;
+            $_SESSION['emailAddress'] = $emailAddress;
+            $_SESSION['hotelName'] = $hotelName;
+            $_SESSION['checkInDate'] = $checkInDate;
+            $_SESSION['checkOutDate'] = $checkOutDate;
+            $noOfDays = $_SESSION['noOfDays'];
+    
+            calculateTotal();
+    
+            $total = $_SESSION['total'];
+        }
     }
 
     function calculateNoOfDays($checkInDate, $checkOutDate) {
@@ -47,13 +60,7 @@
         $_SESSION['total'] = $total;
     }
 
-    if (array_key_exists('btnCompare', $_POST)) {
-        $firstHotel = $hotelName;
-
-
-        //Add existing hotel data to json file
-
-        
+    if (array_key_exists('btnCompare', $_POST)) {        
         header("Location: comparePage.php");
     }
 ?>

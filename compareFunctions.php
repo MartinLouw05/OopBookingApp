@@ -2,48 +2,67 @@
     session_start();
 
     $hotels = file_get_contents('hotels.json');
-    $hotels = json_decode($hotels);  
+    $hotels = json_decode($hotels); 
+    $date = date('Y-m-d');
+    $passed = false; 
+
+    $firstName = $_SESSION['firstName'];
+    $surname = $_SESSION['surname'];
+    $emailAddress = $_SESSION['emailAddress'];
+    $firstHotelName = $_SESSION['hotelName'];
+    $firstNoOfDays = $_SESSION['noOfDays'];
+    $firstTotal = $_SESSION['total'];
 
     if (isset($_POST['submit'])) { 
         $firstName = $_POST['firstName'];
         $surname = $_POST['surname'];
         $emailAddress = $_POST['emailAddress'];
-        $hotelName = $_POST['hotelName'];
+        $secondHotelName = $_POST['hotelName'];
         $checkInDate = $_POST['checkInDate'];
         $checkOutDate = $_POST['checkOutDate'];
 
-        calculateNoOfDays($checkInDate, $checkOutDate);
+        if ($checkInDate < $date) {
+            echo "<script>alert('Check-in Date has Already Passed.  Please Try Again');</script>";
+        } 
+        elseif ($checkInDate > $checkOutDate) {
+            echo "<script>alert('Check-out Date is Before Check-in Date.  Please Try Again');</script>";
+        }
+        else {
+            $passed = true;
 
-        $_SESSION['firstName'] = $firstName;
-        $_SESSION['surname'] = $surname;
-        $_SESSION['emailAddress'] = $emailAddress;
-        $_SESSION['hotelName'] = $hotelName;
-        $_SESSION['checkInDate'] = $checkInDate;
-        $_SESSION['checkOutDate'] = $checkOutDate;
-        $noOfDays = $_SESSION['noOfDays'];
+            calculateNoOfDays($checkInDate, $checkOutDate);
 
-        calculateTotal();
-
-        $total = $_SESSION['total'];
+            $_SESSION['firstName'] = $firstName;
+            $_SESSION['surname'] = $surname;
+            $_SESSION['emailAddress'] = $emailAddress;
+            $_SESSION['secondHotelName'] = $secondHotelName;
+            $_SESSION['checkInDate'] = $checkInDate;
+            $_SESSION['checkOutDate'] = $checkOutDate;
+            $secondNoOfDays = $_SESSION['secondNoOfDays'];
+    
+            calculateTotal();
+    
+            $secondTotal = $_SESSION['secondTotal'];
+        }
     }
 
     function calculateNoOfDays($checkInDate, $checkOutDate) {
         $timestamp1 = strtotime($checkInDate);
         $timestamp2 = strtotime($checkOutDate);
-        $noOfDays = $timestamp2 - $timestamp1;
-        $noOfDays = $noOfDays/(24*60*60);
+        $secondNoOfDays = $timestamp2 - $timestamp1;
+        $secondNoOfDays = $secondNoOfDays/(24*60*60);
 
-        $_SESSION['noOfDays'] = $noOfDays;
+        $_SESSION['secondNoOfDays'] = $secondNoOfDays;
     }
 
     function calculateTotal() {
         $hotels = file_get_contents('hotels.json');
         $hotels = json_decode($hotels);  
 
-        $hotelId = $_SESSION['hotelName'];
+        $hotelId = $_SESSION['secondHotelName'];
         $dailyRate = $hotels[$hotelId] -> dailyRate;
-        $total = $dailyRate * $_SESSION['noOfDays'];
+        $secondTotal = $dailyRate * $_SESSION['secondNoOfDays'];
         
-        $_SESSION['total'] = $total;
+        $_SESSION['secondTotal'] = $secondTotal;
     }
 ?>
