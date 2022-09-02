@@ -13,6 +13,7 @@
 
     session_start();
 
+    //Get Hotel's Information and Other Variables
     $hotels = file_get_contents('../hotels.json');
     $hotels = json_decode($hotels); 
 
@@ -28,7 +29,9 @@
     $secondNoOfDays = $_SESSION['secondNoOfDays'];
     $secondTotal = $_SESSION['secondTotal'];
 
-    if (array_key_exists('btnBook1', $_POST)) {        
+    //Book Buttons Clicked
+    if (array_key_exists('btnBook1', $_POST)) { 
+        //Set Variable's Values       
         $hotelChosen = $_POST['btnBook1'];
         $noOfDays = $firstNoOfDays;
         $total = $firstTotal;
@@ -38,7 +41,8 @@
         //header("Location: index.php");
     }
 
-    if (array_key_exists('btnBook2', $_POST)) {        
+    if (array_key_exists('btnBook2', $_POST)) {  
+        //Set Variable's Values        
         $hotelChosen = $_POST['btnBook2'];
         $noOfDays = $secondNoOfDays;
         $total = $secondTotal;
@@ -48,6 +52,7 @@
         //header("Location: index.php");
     }
 
+    //Create and Send Email to User
     function createEmail($hotelChosen, $noOfDays, $total, $dailyRate) {
         /*try {
             //Server settings

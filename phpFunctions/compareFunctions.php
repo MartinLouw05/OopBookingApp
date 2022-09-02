@@ -1,11 +1,13 @@
 <?php
     session_start();
 
+    //Get Hotel's Information and Other Variables
     $hotels = file_get_contents('../hotels.json');
     $hotels = json_decode($hotels); 
     $date = date('Y-m-d');
     $passed = false; 
 
+    //Retrieve Previously Submitted Forms Information
     $firstName = $_SESSION['firstName'];
     $surname = $_SESSION['surname'];
     $emailAddress = $_SESSION['emailAddress'];
@@ -13,6 +15,7 @@
     $firstNoOfDays = $_SESSION['noOfDays'];
     $firstTotal = $_SESSION['total'];
 
+    //Form Submit
     if (isset($_POST['submit'])) { 
         $firstName = $_POST['firstName'];
         $surname = $_POST['surname'];
@@ -21,6 +24,7 @@
         $checkInDate = $_POST['checkInDate'];
         $checkOutDate = $_POST['checkOutDate'];
 
+        //User Date Input Validation
         if ($checkInDate < $date) {
             echo "<script>alert('Check-in Date has Already Passed.  Please Try Again');</script>";
         } 
@@ -35,6 +39,7 @@
 
             calculateNoOfDays($checkInDate, $checkOutDate);
 
+            //Store Data to Session
             $_SESSION['firstName'] = $firstName;
             $_SESSION['surname'] = $surname;
             $_SESSION['emailAddress'] = $emailAddress;
@@ -49,6 +54,7 @@
         }
     }
 
+    //Calculate Number of Days
     function calculateNoOfDays($checkInDate, $checkOutDate) {
         $timestamp1 = strtotime($checkInDate);
         $timestamp2 = strtotime($checkOutDate);
@@ -58,6 +64,7 @@
         $_SESSION['secondNoOfDays'] = $secondNoOfDays;
     }
 
+    //Calculate Total Amount
     function calculateTotal() {
         $hotels = file_get_contents('../hotels.json');
         $hotels = json_decode($hotels);  
