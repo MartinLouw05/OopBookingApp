@@ -1,0 +1,875 @@
+
+html {
+    background-color: black;
+    background-image: url("https://www.uniquenewsonline.com/wp-content/uploads/2021/12/enjoyable.jpg");
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: cover;
+}
+
+.frmInput {
+    border-radius: 10px;
+    background-color: rgba(255, 255, 255, 0.7);
+    padding-bottom: 10px;
+    width: 80%;
+    margin-left: 10%;
+    border: solid;
+    border-width: 2px;
+    border-color: yellowgreen;
+}
+
+.inputSection {
+    display: grid;
+    grid-template-areas: "gridArea gridArea";
+    grid-template-columns: repeat(2, 1fr);
+    gap: 0%;
+    grid-auto-rows: auto;
+    grid-template-rows: min-content;
+}
+
+.gridArea {
+    padding-top: 20px;
+    padding-left: 20px;
+    padding-bottom: 20px;
+    text-align: center;
+}
+
+h1 {
+    text-transform: uppercase;
+    font-size: xx-large;
+    font-family: cursive;
+    text-align: center;
+    margin-bottom: 0px;
+}
+
+label {    
+    font-size: larger;
+    font-weight: bold;
+}
+
+.compareSectionGrid {
+    display: grid;
+    grid-template-areas: "gridArea gridArea";
+    grid-template-columns: repeat(2, 1fr);
+    gap: 0%;
+    grid-auto-rows: auto;
+    grid-template-rows: min-content;
+}
+
+footer {
+    width: 90%;
+    margin-left: 5%;
+    margin-top: 20px;
+    margin-bottom: 5px;
+    padding: 5px;
+    background-color: aqua;
+    text-align: center;
+    font-style: italic;
+    border-radius: 20px;
+    border: solid;
+    border-width: 1px;
+    border-color: yellowgreen;
+}
+
+.frmInfo {
+    width: 40%;
+    height: 40%;
+    position: absolute;
+    margin-left: 52.5%;
+    margin-right: 5%;
+}
+
+.frmCompare {
+    position: absolute;
+    margin-top: 20px;
+    margin-left: 5%;
+    margin-left: 5%;
+    padding-top: 1px;
+    padding-left: 20px;
+    padding-bottom: 20px;
+    background-color: rgba(255, 255, 255, 0.7);
+    border-radius: 10px;
+    text-align: center;
+    width: 87.5%;
+    height: fit-content;    
+}
+
+@media only screen and (max-width: 600px) {
+    .lblFirstName {
+        margin-left: -110px;
+    }
+    
+    .lblSurname {
+        margin-left: -127.5px;
+    }
+    
+    .lblEmailAddress {
+        margin-left: -82.5px;
+    }
+    
+    .lblCheckInDate {
+        margin-left: -90px;
+    }
+    
+    .lblCheckOutDate {
+        margin-left: -70px;
+    }
+    
+    .lblHotelName {
+        margin-left: -160px;
+    }
+    
+    input {
+        background-color: rgba(255, 255, 255, 0.2);
+        width: 197.5px;
+        height: 70px;
+        padding-left: 15px;
+        padding-right: 15px;
+        border-radius: 10px;
+        border-width: 2px;
+        border-color: black;
+        margin-bottom: 5px;
+        font-size: larger;
+    }
+    
+    select {
+        background-color: rgba(255, 255, 255, 0.2);
+        width: 230px;
+        height: 76px;
+        padding-left: 15px;
+        padding-right: 15px;
+        border-radius: 10px;
+        border-width: 2px;
+        border-color: black;
+        margin-bottom: 5px;
+        font-size: larger;
+    }
+    
+    .dateIn {
+        height: 71.5px;
+    }
+    
+    .dateOut {
+        height: 72.5px;
+    }
+    
+    .divBtn {
+        text-align: center;
+    }
+    
+    .btnSubmit {
+        margin-top: 10px;
+        cursor: pointer;
+        background-color: aqua;
+    }
+
+    .compareSection {
+        display: block;
+        margin-top: 20px;
+        border-radius: 10px;
+        background-color: rgba(255, 255, 255, 0.7);
+        padding-bottom: 10px;
+        width: 80%;
+        margin-left: 10%;
+        border: solid;
+        border-width: 2px;
+        border-color: yellowgreen;
+        text-align: center;
+    }
+    
+    .compareTwoSection {
+        display: block;
+        margin-top: 20px;
+        border-radius: 10px;
+        background-color: rgba(255, 255, 255, 0.7);
+        padding-bottom: 10px;
+        width: 80%;
+        margin-left: 10%;
+        border: solid;
+        border-width: 2px;
+        border-color: yellowgreen;
+        text-align: center;
+    }
+    
+    .hotelInfo {
+        display: block;
+        margin-left: 35.5%;
+        width: 33.3%;
+        text-align: left;
+    }
+    
+    .hotelsInfo {
+        display: block;
+        margin-left: 15%;
+        width: 66.6%;
+        text-align: left;
+        display: grid;
+        grid-template-areas: "hotelGrid hotelGrid";
+        grid-template-columns: repeat(2, 1fr);
+        gap: 0%;
+        grid-auto-rows: auto;
+        grid-template-rows: min-content;
+    }
+    
+    .btnCompare, .btnBook {
+        height: 50px;
+        width: 200px;
+        border: solid;
+        border-color: black;
+        border-radius: 10px;
+        border-width: 2px;
+        background-color: aquamarine;
+        font-size: large;
+        cursor: pointer;
+    }
+}
+
+@media only screen and (min-width: 600px) {
+    .lblFirstName {
+        margin-left: -110px;
+    }
+    
+    .lblSurname {
+        margin-left: -127.5px;
+    }
+    
+    .lblEmailAddress {
+        margin-left: -82.5px;
+    }
+    
+    .lblCheckInDate {
+        margin-left: -90px;
+    }
+    
+    .lblCheckOutDate {
+        margin-left: -70px;
+    }
+    
+    .lblHotelName {
+        margin-left: -160px;
+    }
+    
+    input {
+        background-color: rgba(255, 255, 255, 0.2);
+        width: 197.5px;
+        height: 70px;
+        padding-left: 15px;
+        padding-right: 15px;
+        border-radius: 10px;
+        border-width: 2px;
+        border-color: black;
+        margin-bottom: 5px;
+        font-size: larger;
+    }
+    
+    select {
+        background-color: rgba(255, 255, 255, 0.2);
+        width: 230px;
+        height: 76px;
+        padding-left: 15px;
+        padding-right: 15px;
+        border-radius: 10px;
+        border-width: 2px;
+        border-color: black;
+        margin-bottom: 5px;
+        font-size: larger;
+    }
+    
+    .dateIn {
+        height: 71.5px;
+    }
+    
+    .dateOut {
+        height: 72.5px;
+    }
+    
+    .divBtn {
+        text-align: center;
+    }
+    
+    .btnSubmit {
+        margin-top: 10px;
+        cursor: pointer;
+        background-color: aqua;
+    }
+
+    .compareSection {
+        display: block;
+        margin-top: 20px;
+        border-radius: 10px;
+        background-color: rgba(255, 255, 255, 0.7);
+        padding-bottom: 10px;
+        width: 80%;
+        margin-left: 10%;
+        border: solid;
+        border-width: 2px;
+        border-color: yellowgreen;
+        text-align: center;
+    }
+    
+    .compareTwoSection {
+        display: block;
+        margin-top: 20px;
+        border-radius: 10px;
+        background-color: rgba(255, 255, 255, 0.7);
+        padding-bottom: 10px;
+        width: 80%;
+        margin-left: 10%;
+        border: solid;
+        border-width: 2px;
+        border-color: yellowgreen;
+        text-align: center;
+    }
+    
+    .hotelInfo {
+        display: block;
+        margin-left: 35.5%;
+        width: 33.3%;
+        text-align: left;
+    }
+    
+    .hotelsInfo {
+        display: block;
+        margin-left: 15%;
+        width: 66.6%;
+        text-align: left;
+        display: grid;
+        grid-template-areas: "hotelGrid hotelGrid";
+        grid-template-columns: repeat(2, 1fr);
+        gap: 0%;
+        grid-auto-rows: auto;
+        grid-template-rows: min-content;
+    }
+    
+    .btnCompare, .btnBook {
+        height: 50px;
+        width: 200px;
+        border: solid;
+        border-color: black;
+        border-radius: 10px;
+        border-width: 2px;
+        background-color: aquamarine;
+        font-size: large;
+        cursor: pointer;
+    }
+}
+
+@media only screen and (min-width: 768px) {
+    .lblFirstName {
+        margin-left: -160px;
+    }
+    
+    .lblSurname {
+        margin-left: -177.5px;
+    }
+    
+    .lblEmailAddress {
+        margin-left: -132.5px;
+    }
+    
+    .lblCheckInDate {
+        margin-left: -140px;
+    }
+    
+    .lblCheckOutDate {
+        margin-left: -120px;
+    }
+    
+    .lblHotelName {
+        margin-left: -210px;
+    }
+    
+    input {
+        background-color: rgba(255, 255, 255, 0.2);
+        width: 235px;
+        height: 70px;
+        padding-left: 15px;
+        padding-right: 15px;
+        border-radius: 10px;
+        border-width: 2px;
+        border-color: black;
+        margin-bottom: 5px;
+        font-size: larger;
+    }
+    
+    select {
+        background-color: rgba(255, 255, 255, 0.2);
+        width: 270px;
+        height: 76px;
+        padding-left: 15px;
+        padding-right: 15px;
+        border-radius: 10px;
+        border-width: 2px;
+        border-color: black;
+        margin-bottom: 5px;
+        font-size: larger;
+    }
+    
+    .dateIn {
+        height: 71.5px;
+    }
+    
+    .dateOut {
+        height: 72.5px;
+    }
+    
+    .divBtn {
+        text-align: center;
+    }
+    
+    .btnSubmit {
+        margin-top: 10px;
+        cursor: pointer;
+        background-color: aqua;
+    }
+
+    .compareSection {
+        display: block;
+        margin-top: 20px;
+        border-radius: 10px;
+        background-color: rgba(255, 255, 255, 0.7);
+        padding-bottom: 10px;
+        width: 80%;
+        margin-left: 10%;
+        border: solid;
+        border-width: 2px;
+        border-color: yellowgreen;
+        text-align: center;
+    }
+    
+    .compareTwoSection {
+        display: block;
+        margin-top: 20px;
+        border-radius: 10px;
+        background-color: rgba(255, 255, 255, 0.7);
+        padding-bottom: 10px;
+        width: 80%;
+        margin-left: 10%;
+        border: solid;
+        border-width: 2px;
+        border-color: yellowgreen;
+        text-align: center;
+    }
+    
+    .hotelInfo {
+        display: block;
+        margin-left: 35.5%;
+        width: 33.3%;
+        text-align: left;
+    }
+    
+    .hotelsInfo {
+        display: block;
+        margin-left: 19%;
+        width: 66.6%;
+        text-align: left;
+        display: grid;
+        grid-template-areas: "hotelGrid hotelGrid";
+        grid-template-columns: repeat(2, 1fr);
+        gap: 0%;
+        grid-auto-rows: auto;
+        grid-template-rows: min-content;
+    }
+    
+    .btnCompare, .btnBook {
+        height: 50px;
+        width: 200px;
+        border: solid;
+        border-color: black;
+        border-radius: 10px;
+        border-width: 2px;
+        background-color: aquamarine;
+        font-size: large;
+        cursor: pointer;
+    }
+}
+
+@media only screen and (min-width: 992px) {
+    .lblFirstName {
+        margin-left: -210px;
+    }
+    
+    .lblSurname {
+        margin-left: -232.5px;
+    }
+    
+    .lblEmailAddress {
+        margin-left: -192.5px;
+    }
+    
+    .lblCheckInDate {
+        margin-left: -195px;
+    }
+    
+    .lblCheckOutDate {
+        margin-left: -185px;
+    }
+    
+    .lblHotelName {
+        margin-left: -265px;
+    }
+    
+    input {
+        background-color: rgba(255, 255, 255, 0.2);
+        width: 300px;
+        height: 70px;
+        padding-left: 15px;
+        padding-right: 15px;
+        border-radius: 10px;
+        border-width: 2px;
+        border-color: black;
+        margin-bottom: 5px;
+        font-size: larger;
+    }
+    
+    select {
+        background-color: rgba(255, 255, 255, 0.2);
+        width: 335px;
+        height: 76px;
+        padding-left: 15px;
+        padding-right: 15px;
+        border-radius: 10px;
+        border-width: 2px;
+        border-color: black;
+        margin-bottom: 5px;
+        font-size: larger;
+    }
+    
+    .dateIn {
+        height: 71.5px;
+    }
+    
+    .dateOut {
+        height: 72.5px;
+    }
+    
+    .divBtn {
+        text-align: center;
+    }
+    
+    .btnSubmit {
+        margin-top: 10px;
+        cursor: pointer;
+        background-color: aqua;
+    }
+
+    .compareSection {
+        display: block;
+        margin-top: 20px;
+        border-radius: 10px;
+        background-color: rgba(255, 255, 255, 0.7);
+        padding-bottom: 10px;
+        width: 80%;
+        margin-left: 10%;
+        border: solid;
+        border-width: 2px;
+        border-color: yellowgreen;
+        text-align: center;
+    }
+    
+    .compareTwoSection {
+        display: block;
+        margin-top: 20px;
+        border-radius: 10px;
+        background-color: rgba(255, 255, 255, 0.7);
+        padding-bottom: 10px;
+        width: 80%;
+        margin-left: 10%;
+        border: solid;
+        border-width: 2px;
+        border-color: yellowgreen;
+        text-align: center;
+    }
+    
+    .hotelInfo {
+        display: block;
+        margin-left: 37.5%;
+        width: 33.3%;
+        text-align: left;
+    }
+    
+    .hotelsInfo {
+        display: block;
+        margin-left: 24%;
+        width: 66.6%;
+        text-align: left;
+        display: grid;
+        grid-template-areas: "hotelGrid hotelGrid";
+        grid-template-columns: repeat(2, 1fr);
+        gap: 0%;
+        grid-auto-rows: auto;
+        grid-template-rows: min-content;
+    }
+    
+    .btnCompare, .btnBook {
+        height: 50px;
+        width: 200px;
+        border: solid;
+        border-color: black;
+        border-radius: 10px;
+        border-width: 2px;
+        background-color: aquamarine;
+        font-size: large;
+        cursor: pointer;
+    }
+}
+
+@media only screen and (min-width: 1200px){
+    .lblFirstName {
+        margin-left: -315px;
+    }
+    
+    .lblSurname {
+        margin-left: -337.5px;
+    }
+    
+    .lblEmailAddress {
+        margin-left: -297.5px;
+    }
+    
+    .lblCheckInDate {
+        margin-left: -300px;
+    }
+    
+    .lblCheckOutDate {
+        margin-left: -290px;
+    }
+    
+    .lblHotelName {
+        margin-left: -370px;
+    }
+    
+    input {
+        background-color: rgba(255, 255, 255, 0.2);
+        width: 400px;
+        height: 70px;
+        padding-left: 15px;
+        padding-right: 15px;
+        border-radius: 10px;
+        border-width: 2px;
+        border-color: black;
+        margin-bottom: 5px;
+        font-size: larger;
+    }
+    
+    select {
+        background-color: rgba(255, 255, 255, 0.2);
+        width: 435px;
+        height: 76px;
+        padding-left: 15px;
+        padding-right: 15px;
+        border-radius: 10px;
+        border-width: 2px;
+        border-color: black;
+        margin-bottom: 5px;
+        font-size: larger;
+    }
+    
+    .dateIn {
+        height: 71.5px;
+    }
+    
+    .dateOut {
+        height: 72.5px;
+    }
+    
+    .divBtn {
+        text-align: center;
+    }
+    
+    .btnSubmit {
+        margin-top: 10px;
+        cursor: pointer;
+        background-color: aqua;
+    }
+
+    .compareSection {
+        display: block;
+        margin-top: 20px;
+        border-radius: 10px;
+        background-color: rgba(255, 255, 255, 0.7);
+        padding-bottom: 10px;
+        width: 80%;
+        margin-left: 10%;
+        border: solid;
+        border-width: 2px;
+        border-color: yellowgreen;
+        text-align: center;
+    }
+    
+    .compareTwoSection {
+        display: block;
+        margin-top: 20px;
+        border-radius: 10px;
+        background-color: rgba(255, 255, 255, 0.7);
+        padding-bottom: 10px;
+        width: 80%;
+        margin-left: 10%;
+        border: solid;
+        border-width: 2px;
+        border-color: yellowgreen;
+        text-align: center;
+    }
+    
+    .hotelInfo {
+        display: block;
+        margin-left: 40%;
+        width: 33.3%;
+        text-align: left;
+    }
+    
+    .hotelsInfo {
+        display: block;
+        margin-left: 24%;
+        width: 66.6%;
+        text-align: left;
+        display: grid;
+        grid-template-areas: "hotelGrid hotelGrid";
+        grid-template-columns: repeat(2, 1fr);
+        gap: 0%;
+        grid-auto-rows: auto;
+        grid-template-rows: min-content;
+    }
+    
+    .btnCompare, .btnBook {
+        height: 50px;
+        width: 200px;
+        border: solid;
+        border-color: black;
+        border-radius: 10px;
+        border-width: 2px;
+        background-color: aquamarine;
+        font-size: large;
+        cursor: pointer;
+    }
+}
+
+@media only screen and (min-width: 1550px){
+    .lblFirstName {
+        margin-left: -375px;
+    }
+    
+    .lblSurname {
+        margin-left: -397.5px;
+    }
+    
+    .lblEmailAddress {
+        margin-left: -352.5px;
+    }
+    
+    .lblCheckInDate {
+        margin-left: -355px;
+    }
+    
+    .lblCheckOutDate {
+        margin-left: -345px;
+    }
+    
+    .lblHotelName {
+        margin-left: -425px;
+    }
+
+    input {
+        background-color: rgba(255, 255, 255, 0.2);
+        width: 500px;
+        height: 70px;
+        padding-left: 15px;
+        padding-right: 15px;
+        border-radius: 10px;
+        border-width: 2px;
+        border-color: black;
+        margin-bottom: 5px;
+        font-size: larger;
+    }
+    
+    select {
+        background-color: rgba(255, 255, 255, 0.2);
+        width: 535px;
+        height: 76px;
+        padding-left: 15px;
+        padding-right: 15px;
+        border-radius: 10px;
+        border-width: 2px;
+        border-color: black;
+        margin-bottom: 5px;
+        font-size: larger;
+    }
+    
+    .dateIn {
+        height: 71.5px;
+    }
+    
+    .dateOut {
+        height: 72.5px;
+    }
+    
+    .divBtn {
+        text-align: center;
+    }
+    
+    .btnSubmit {
+        margin-top: 10px;
+        cursor: pointer;
+        background-color: aqua;
+    }
+
+    .compareSection {
+        display: block;
+        margin-top: 20px;
+        border-radius: 10px;
+        background-color: rgba(255, 255, 255, 0.7);
+        padding-bottom: 10px;
+        width: 80%;
+        margin-left: 10%;
+        border: solid;
+        border-width: 2px;
+        border-color: yellowgreen;
+        text-align: center;
+    }
+    
+    .compareTwoSection {
+        display: block;
+        margin-top: 20px;
+        border-radius: 10px;
+        background-color: rgba(255, 255, 255, 0.7);
+        padding-bottom: 10px;
+        width: 80%;
+        margin-left: 10%;
+        border: solid;
+        border-width: 2px;
+        border-color: yellowgreen;
+        text-align: center;
+    }
+    
+    .hotelInfo {
+        display: block;
+        margin-left: 43%;
+        width: 33.3%;
+        text-align: left;
+    }
+    
+    .hotelsInfo {
+        display: block;
+        margin-left: 28%;
+        width: 66.6%;
+        text-align: left;
+        display: grid;
+        grid-template-areas: "hotelGrid hotelGrid";
+        grid-template-columns: repeat(2, 1fr);
+        gap: 0%;
+        grid-auto-rows: auto;
+        grid-template-rows: min-content;
+    }
+    
+    .btnCompare, .btnBook {
+        height: 50px;
+        width: 200px;
+        border: solid;
+        border-color: black;
+        border-radius: 10px;
+        border-width: 2px;
+        background-color: aquamarine;
+        font-size: large;
+        cursor: pointer;
+    }
+}

@@ -6,11 +6,12 @@
         </title>
 
         <?php session_start(); ?>
-        <?php require('compareFunctions.php'); ?>
-        <?php require('hotels.php'); ?>
+        <?php require('../phpFunctions/compareFunctions.php'); ?>
+        <?php require('../phpFunctions/hotels.php'); ?>
+        <?php require('../phpFunctions/email.php'); ?>
         <?php //hotelsInformation(); ?>
-        <link rel="stylesheet" type="text/css" href="stylesheet.css?ts=<?=time()?>">
-        <script src="./functions.js" defer></script>
+        <link rel="stylesheet" type="text/css" href="../css/stylesheet.css?ts=<?=time()?>">
+        <script src="../js/functions.js" defer></script>
     </head>
 
     <body>
@@ -54,43 +55,45 @@
                 </div>
             </form>
 
-            <div id="compareTwoSection" class="compareTwoSection">
-                <h1>Hotels Information</h1>
-                <section class="hotelsInfo">
-                    <div class="hotelGrid">
-                        <h4 id="hotelNameInfo"><?= $hotels[$firstHotelName] -> name; ?>, <?= $hotels[$firstHotelName] -> location; ?></h4>
-                        <p id="noOfDays">Number of Days: <?= $firstNoOfDays; ?></p>
-                        <p id="hotelDailyRate">Daily Rate: R<?= $hotels[$firstHotelName] -> dailyRate; ?> per day</p>
-                        <p id="total">Total: R<?= $firstTotal; ?></p>
-                        <h4>Activities</h4>
-                        <ul>
-                            <?php foreach ($hotels[$firstHotelName] -> activities as $activity) { ?>
-                                <li><?= $activity ?></li>
-                            <?php } ?>
-                        </ul>
-                        <button id="btnBook1" name="btnBook1" class="btnBook">Book</button>
-                    </div>
-                    <?php if($passed == true) { ?>
+            <form method="post">
+                <div id="compareTwoSection" class="compareTwoSection">
+                    <h1>Hotels Information</h1>
+                    <section class="hotelsInfo">
                         <div class="hotelGrid">
-                            <h4 id="hotelNameInfo"><?= $hotels[$secondHotelName] -> name; ?>, <?= $hotels[$secondHotelName] -> location; ?></h4>
-                            <p id="noOfDays">Number of Days: <?= $secondNoOfDays; ?></p>
-                            <p id="hotelDailyRate">Daily Rate: R<?= $hotels[$secondHotelName] -> dailyRate; ?> per day</p>
-                            <p id="total">Total: R<?= $secondTotal; ?></p>
+                            <h4 id="hotelNameInfo"><?= $hotels[$firstHotelName] -> name; ?>, <?= $hotels[$firstHotelName] -> location; ?></h4>
+                            <p id="noOfDays">Number of Days: <?= $firstNoOfDays; ?></p>
+                            <p id="hotelDailyRate">Daily Rate: R<?= $hotels[$firstHotelName] -> dailyRate; ?> per day</p>
+                            <p id="total">Total: R<?= $firstTotal; ?></p>
                             <h4>Activities</h4>
                             <ul>
-                                <?php foreach ($hotels[$secondHotelName] -> activities as $activity) { ?>
+                                <?php foreach ($hotels[$firstHotelName] -> activities as $activity) { ?>
                                     <li><?= $activity ?></li>
                                 <?php } ?>
                             </ul>
-                            <button id="btnBook2" name="btnBook2" class="btnBook">Book</button>
-                        </div>   
-                    <?php } else { ?>  
-                        <div class="hotelGrid">
-                            <h4>Please Select Another Hotel</h4>
-                        </div> 
-                    <?php } ?> 
-                </section>
-            </div>
+                            <button id="btnBook1" name="btnBook1" class="btnBook" value="<?= $firstHotelName ?>">Book</button>
+                        </div>
+                        <?php if($passed == true) { ?>
+                            <div class="hotelGrid">
+                                <h4 id="hotelNameInfo"><?= $hotels[$secondHotelName] -> name; ?>, <?= $hotels[$secondHotelName] -> location; ?></h4>
+                                <p id="noOfDays">Number of Days: <?= $secondNoOfDays; ?></p>
+                                <p id="hotelDailyRate">Daily Rate: R<?= $hotels[$secondHotelName] -> dailyRate; ?> per day</p>
+                                <p id="total">Total: R<?= $secondTotal; ?></p>
+                                <h4>Activities</h4>
+                                <ul>
+                                    <?php foreach ($hotels[$secondHotelName] -> activities as $activity) { ?>
+                                        <li><?= $activity ?></li>
+                                    <?php } ?>
+                                </ul>
+                                <button id="btnBook2" name="btnBook2" class="btnBook" value="<?= $secondHotelName ?>">Book</button>
+                            </div>   
+                        <?php } else { ?>  
+                            <div class="hotelGrid">
+                                <h4>Please Select Another Hotel</h4>
+                            </div> 
+                        <?php } ?> 
+                    </section>
+                </div>
+            </form>
         </main>
         <footer>
             <label>&copy; Created by Martin Louw</label>

@@ -6,11 +6,11 @@
         </title>
 
         <?php session_start(); ?>
-        <?php require('functions.php'); ?>
-        <?php require('hotels.php'); ?>
+        <?php require('../phpFunctions/functions.php'); ?>
+        <?php require('../phpFunctions/hotels.php'); ?>
         <?php //hotelsInformation(); ?>
-        <link rel="stylesheet" type="text/css" href="stylesheet.css?ts=<?=time()?>">
-        <script src="./functions.js" defer></script>
+        <link rel="stylesheet" type="text/css" href="../css/stylesheet.css?ts=<?=time()?>">
+        <script src="../js/functions.js" defer></script>
     </head>
 
     <body>

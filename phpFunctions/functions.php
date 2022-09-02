@@ -1,7 +1,7 @@
 <?php
     session_start();
     
-    $hotels = file_get_contents('hotels.json');
+    $hotels = file_get_contents('../hotels.json');
     $hotels = json_decode($hotels);  
     $date = date('Y-m-d');
     $passed = false;
@@ -20,6 +20,9 @@
         } 
         elseif ($checkInDate > $checkOutDate) {
             echo "<script>alert('Check-out Date is Before Check-in Date.  Please Try Again');</script>";
+        }
+        elseif ($checkInDate == $checkOutDate) {
+            echo "<script>alert('Check-out Date is the Same Day as Check-in Date.  Please Try Again');</script>";
         }
         else {
             $passed = true;
@@ -50,7 +53,7 @@
     }
 
     function calculateTotal() {
-        $hotels = file_get_contents('hotels.json');
+        $hotels = file_get_contents('../hotels.json');
         $hotels = json_decode($hotels);  
 
         $hotelId = $_SESSION['hotelName'];
