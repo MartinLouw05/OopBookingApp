@@ -13,10 +13,18 @@ Bookings made on this application ARE NOT VALID.
 In order to use the application the user will have to download the project from GitHub and then run the program using Visual Studio Code.
 All data, that the program uses, is included within the program's files.
 
+The index.php file is located in the following directory:
+http://localhost/OopBookingApp/phpWebpages/
+
 Users will have to install PHP and Composer on their system to be able to make use of the application's email functionality.
 Composer can be downloaded at: https://getcomposer.org/
 
 Users will also have to add their own settings for their email service in the 'Server Settings' area found in the 'email.php' file.
+
+-HOW TO ADD ADDITIONAL HOTELS-
+To add more hotels to this application, simply add the new hotel's information to the 'hotels.php' file and uncomment line 11 on the 'index.php' file.
+Alternatively users can add additional hotels to the 'hotels.json' file.
+NB: Remember to recomment line 11 on the 'index.php' file once you are done adding additional hotels to prevent duplicate hotels.
 
 -SUPPORT-
 If you experience any issues with the installation or usage of the application, please contact the author through GitHub.

@@ -61,6 +61,7 @@
         }
     }
 
+    //Hotel's Information
     function hotelsInformation() {
         $newHotel = new Hotels();
 
