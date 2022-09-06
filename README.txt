@@ -14,8 +14,9 @@ In order to use the application the user will have to download the project from 
 All data, that the program uses, is included within the program's files.
 
 Users will have to install PHP and Composer on their system to be able to make use of the application's email functionality.
-PHP can be downloaded at: https://www.php.net/
 Composer can be downloaded at: https://getcomposer.org/
+
+Users will also have to add their own settings for their email service in the 'Server Settings' area found in the 'email.php' file.
 
 -SUPPORT-
 If you experience any issues with the installation or usage of the application, please contact the author through GitHub.

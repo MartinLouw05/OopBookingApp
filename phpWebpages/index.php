@@ -36,7 +36,7 @@
                 <div class="gridArea">
                     <label for='hotelName' class="lblHotelName">Hotel:</label><br>
                         <select id="hotelName" name='hotelName' required>
-                            <option value="" selected>Please Select a Hotel</option>
+                            <option value="" selected hidden>Please Select a Hotel</option>
                             <?php foreach ($hotels as $key => $option) { ?>
                                 <option value="<?= $key; ?>"><?= $option -> name; ?></option>    
                             <?php } ?>                             
