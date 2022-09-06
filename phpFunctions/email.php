@@ -35,7 +35,6 @@
         $dailyRate = $hotels[$hotelChosen] -> dailyRate;
 
         createEmail($hotelChosen, $noOfDays, $total, $dailyRate);
-        header("Location: index.php");
     }
 
     if (array_key_exists('btnBook2', $_POST)) {  
@@ -46,7 +45,6 @@
         $dailyRate = $hotels[$hotelChosen] -> dailyRate;
 
         createEmail($hotelChosen, $noOfDays, $total, $dailyRate);
-        header("Location: index.php");
     }
 
     //Create and Send Email to User
@@ -55,6 +53,7 @@
             $hotels = file_get_contents('../hotels.json');
             $hotels = json_decode($hotels); 
             $firstName = $_SESSION['firstName'];
+            $surname = $_SESSION['surname'];
             $emailAddress = $_SESSION['emailAddress'];
             // Instantiation and passing `true` enables exceptions
             $mail = new PHPMailer(true);
@@ -77,7 +76,7 @@
             // Content
             $mail->isHTML(true);                                        // Set email format to HTML
             $mail->Subject = 'Hotel Reservation';
-            $mail->Body    = 'Dear ' . $firstName . $surname . '<br>
+            $mail->Body    = 'Dear ' . $firstName. ' ' . $surname . '<br>
                             <br>
                             Please find herewith attached your hotel reservation for the ' . $hotels[$hotelChosen]->name . ' hotel, ' . $hotels[$hotelChosen]->location.'. <br>
                             Number of Days Reserved: ' . $noOfDays . ' days<br>
@@ -93,10 +92,16 @@
                             Hotel Management';
 
             $mail->send();
-            echo "<script>alert('Email Successfully Sent.  Please Check Your Emails');</script>";
+            echo "  <script>
+                        alert('Email Successfully Sent.  Please Check Your Emails');
+                        window.location.href = 'index.php';
+                    </script>";
         } 
         catch (Exception $e) {
-            echo "<script>alert('Email Could Not be Sent.  Please Try Again.  Error: <?php {$mail->ErrorInfo}; ?>');</script>";
+            echo "  <script>
+                        alert('Email Could Not be Sent.  Please Try Again. {$mail->ErrorInfo}');
+                        window.location.href = 'comparePage.php';
+                    </script>";
         }
-    }   
+    }  
 ?>
